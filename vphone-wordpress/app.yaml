@@ -1,5 +1,5 @@
-application: your-project-id
-version: wpfromstarterproject
+application: vphone-1339
+version: 1
 runtime: php55
 api_version: 1
 
@@ -54,3 +54,5 @@ skip_files:
 - ^(.*/)?\.bat$
 - ^(.*/)?\.sh$
 - ^(.*/)?\.md$
+- ^wordpress/wp-content/themes/vphone/node_modules/.*
+- ^wordpress/wp-content/themes/vphone/bower_components/.*
