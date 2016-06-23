@@ -24,7 +24,7 @@
     if (isset($_SERVER['SERVER_SOFTWARE']) && strpos($_SERVER['SERVER_SOFTWARE'],'Google App Engine') !== false) {
         /** Live environment Cloud SQL login and SITE_URL info */
         /** Note that from App Engine, the password is not required, so leave it blank here */
-        define('DB_HOST', ':/cloudsql/vphone-1339:wordpress');
+        define('DB_HOST', ':/cloudsql/vphone-1339:wordpress2');
         define('DB_USER', 'root');
         define('DB_PASSWORD', '');
     } else {
@@ -96,12 +96,12 @@
      * in their development environments.
      */
     define('WP_DEBUG', false);
-    
+
     /**
      * Disable default wp-cron in favor of a real cron job
      */
     define('DISABLE_WP_CRON', true);
-    
+
     // configures batcache
     $batcache = [
       'seconds'=>0,
@@ -116,5 +116,3 @@
 
     /** Sets up WordPress vars and included files. */
     require_once(ABSPATH . 'wp-settings.php');
-
-
