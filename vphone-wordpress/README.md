@@ -24,3 +24,6 @@ If not first time, just start the db:
 Login with admin/admin
 
 
+To upload:
+
+    ~/google_appengine/appcfg.py update .
