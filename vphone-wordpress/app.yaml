@@ -3,6 +3,9 @@ version: 1
 runtime: php55
 api_version: 1
 
+inbound_services:
+- mail
+
 handlers:
 - url: /(.*\.(htm|html|css|js))$
   static_files: wordpress/\1
