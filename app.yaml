@@ -49,6 +49,11 @@ handlers:
 - url: /wp-(.+).php
   script: wordpress/wp-\1.php
 
+- url: /_ah/mail/.+
+  script: handle_incoming_email.php
+  login: admin
+
+
 - url: /(.+)?/?
   script: wordpress/index.php
 
