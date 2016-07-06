@@ -2,7 +2,7 @@
 /**
  * Copyright (c) 2013, Esendex Ltd.
  * All rights reserved.
- * 
+ *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
  *     * Redistributions of source code must retain the above copyright
@@ -13,7 +13,7 @@
  *     * Neither the name of Esendex nor the
  *       names of its contributors may be used to endorse or promote products
  *       derived from this software without specific prior written permission.
- * 
+ *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
  * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
  * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
@@ -98,7 +98,7 @@ class HttpClient implements IHttp
 
         return $results['data'];
     }
-    
+
     public function delete($url, IAuthentication $authentication)
     {
         $results = $this->request($url, $authentication, 'DELETE');
@@ -118,7 +118,7 @@ class HttpClient implements IHttp
         \curl_setopt($curlHandle, CURLOPT_RETURNTRANSFER, true);
         \curl_setopt($curlHandle, CURLOPT_TIMEOUT, 30);
         \curl_setopt($curlHandle, CURLOPT_HEADER, false);
-        \curl_setopt($curlHandle, CURLOPT_CAINFO, self::$certificateBundle);
+//        \curl_setopt($curlHandle, CURLOPT_CAINFO, self::$certificateBundle);
         \curl_setopt($curlHandle, CURLOPT_USERAGENT, self::$userAgent);
         \curl_setopt($curlHandle, CURLOPT_CUSTOMREQUEST, $method);
         if ($method == 'PUT' || $method == 'POST') {

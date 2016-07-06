@@ -1,6 +1,6 @@
 <?php
 // Get the contents of the mail here.
-$mail_data = file_get_contents("email");//'php://input');
+$mail_data = file_get_contents('php://input');
 
 echo syslog(LOG_INFO, $mail_data);
 
@@ -8,7 +8,7 @@ function extract_destination($mail, $header_struct) {
   $header_part = mailparse_msg_get_part($mail, $header_struct);
   $headers = mailparse_msg_get_part_data($header_part);
   $to_email = $headers["headers"]["delivered-to"];
-  $to = imap_rfc822_parse_adrlist($to_email, "")[0]->mailbox;
+  $to = explode("@", $to_email)[0];
   return $to;
 }
 
@@ -25,9 +25,12 @@ mailparse_msg_parse($mail, $mail_data);
 $struct = mailparse_msg_get_structure($mail);
 
 $to = extract_destination($mail, $struct[0]);
-$contents = extract_contents($mail, $struct[1], $mail_data);
+$contents = extract_contents($mail, $struct[0], $mail_data);
+if(empty($contents))
+  $contents = extract_contents($mail, $struct[1], $mail_data);
 
-echo syslog(LOG_INFO, sprintf("sending email to '%s', contents: '%s'", $to, $contents);
+echo syslog(LOG_INFO, sprintf("sending email to '%s', contents: '%s'",
+                          $to, $contents));
 
 
 $from = "46738966872";
@@ -38,7 +41,7 @@ require('secrets.inc.php');
 $message = new \Esendex\Model\DispatchMessage(
     $from,
     $to,
-    "My Web App is SMS enabled!",
+    $contents,
     \Esendex\Model\Message::SmsType
 );
 $authentication = new \Esendex\Authentication\LoginAuthentication(
