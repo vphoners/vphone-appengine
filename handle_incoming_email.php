@@ -17,7 +17,7 @@ function extract_contents($mail, $contents_struct, $mail_data) {
   ob_start();
   mailparse_msg_extract_part($contents_part, $mail_data);
   $contents = ob_get_clean();
-  return $contents;
+  return trim($contents);
 }
 
 $mail = mailparse_msg_create();
