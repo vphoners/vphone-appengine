@@ -25,9 +25,9 @@ mailparse_msg_parse($mail, $mail_data);
 $struct = mailparse_msg_get_structure($mail);
 
 $to = extract_destination($mail, $struct[0]);
-$contents = extract_contents($mail, $struct[0], $mail_data);
+$contents = extract_contents($mail, $struct[1], $mail_data);
 if(empty($contents))
-  $contents = extract_contents($mail, $struct[1], $mail_data);
+  $contents = extract_contents($mail, $struct[0], $mail_data);
 
 echo syslog(LOG_INFO, sprintf("sending email to '%s', contents: '%s'",
                           $to, $contents));
