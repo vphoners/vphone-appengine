@@ -53,6 +53,9 @@ handlers:
   script: handle_incoming_email.php
   login: admin
 
+- url: /api/sms
+  script: handle_incoming_sms.php
+
 
 - url: /(.+)?/?
   script: wordpress/index.php
