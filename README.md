@@ -1,5 +1,5 @@
-Run app server: 
-    ~/google_appengine/dev_appserver.py --php_executable_path=$(which php-cgi) .
+Run app server:
+    docker run -v $(pwd):/app --rm --net=host mhariri/docker-google-appengine-php
 
 
 First time running on this machine? then you need to setup database:
