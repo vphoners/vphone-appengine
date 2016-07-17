@@ -57,4 +57,3 @@ $authentication = new \Esendex\Authentication\LoginAuthentication(
 );
 $service = new \Esendex\DispatchService($authentication);
 $result = $service->send($message);
-?>
