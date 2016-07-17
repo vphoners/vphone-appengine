@@ -8,9 +8,9 @@ if($_SERVER["CONTENT_TYPE"] != "application/json") {
 $data = json_decode(file_get_contents('php://input'), true);
 
 if($data["device"] == "mohsen") {
-  $to = "m.hariri@gmail.com"
+  $to = "m.hariri@gmail.com";
 }else{
-  $to = "feraswilson2010@gmail.com"
+  $to = "feraswilson2010@gmail.com";
 }
 
 if(isset($data["from"]) && isset($data["timestamp"]) && isset($data["body"])) {
