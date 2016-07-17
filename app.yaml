@@ -50,11 +50,11 @@ handlers:
   script: wordpress/wp-\1.php
 
 - url: /_ah/mail/.+
-  script: handle_incoming_email.php
+  script: mail_to_from_sms/handle_incoming_email.php
   login: admin
 
 - url: /api/sms
-  script: handle_incoming_sms.php
+  script: mail_to_from_sms/handle_incoming_sms.php
 
 
 - url: /(.+)?/?
