@@ -27,3 +27,10 @@ Login with admin/admin
 To upload:
 
     ~/google_appengine/appcfg.py update .
+
+
+
+# Run tests
+
+Run `run_tests.sh`
+If using docker image: `docker exec -it xyz /app/run_tests.sh`

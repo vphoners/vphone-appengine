@@ -1,48 +1,30 @@
 <?php
+
+require_once('esendex-php-sdk/src/autoload.php');
+require_once('../secrets.inc.php');
+require_once('Mail.php');
+
+
 // Get the contents of the mail here.
 $mail_data = file_get_contents('php://input');
 
 echo syslog(LOG_INFO, $mail_data);
 
-function get(&$var, $default=null) {
-    return isset($var) ? $var : $default;
-}
+$mail = new Mail($mail_data);
 
-function extract_destination($mail, $header_struct) {
-  $header_part = mailparse_msg_get_part($mail, $header_struct);
-  $headers = mailparse_msg_get_part_data($header_part);
-  $to_email = get($headers["headers"]["delivered-to"],
-                $headers["headers"]["to"]);
-  $to = explode("@", $to_email)[0];
-  return $to;
-}
+$to = $mail->extract_destination();
+$sender = $mail->extract_sender();
 
-function extract_contents($mail, $contents_struct, $mail_data) {
-  $contents_part = mailparse_msg_get_part($mail, $contents_struct);
-  ob_start();
-  mailparse_msg_extract_part($contents_part, $mail_data);
-  $contents = ob_get_clean();
-  return trim($contents);
-}
-
-$mail = mailparse_msg_create();
-mailparse_msg_parse($mail, $mail_data);
-$struct = mailparse_msg_get_structure($mail);
-
-$to = extract_destination($mail, $struct[0]);
-if(isset($struct[1]))
-  $contents = extract_contents($mail, $struct[1], $mail_data);
-if(empty($contents))
-  $contents = extract_contents($mail, $struct[0], $mail_data);
+$contents = $mail->extract_contents();
 
 echo syslog(LOG_INFO, sprintf("sending sms to '%s', contents: '%s'",
                           $to, $contents));
 
+if(sender == "m.hariri@gmail.com")
+  $from = "46738966872";
+elseif (sender == "feraswilson2010@gmail.com")
+  $from = "46708305578";
 
-$from = "46738966872";
-
-require_once('esendex-php-sdk/src/autoload.php');
-require('secrets.inc.php');
 
 $message = new \Esendex\Model\DispatchMessage(
     $from,
