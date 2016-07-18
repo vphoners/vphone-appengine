@@ -14,7 +14,7 @@ if($data["device"] == "mohsen") {
 }
 
 if(isset($data["from"]) && isset($data["timestamp"]) && isset($data["body"])) {
-  mail($to , "sms" , $data["body"],
+  mail($to , "RE: sms" , $data["body"],
         "From: " . $data["from"] . "@vphone-1339.appspotmail.com");
 }else {
   header("HTTP/1.1 400 Request is missing required paramters");
