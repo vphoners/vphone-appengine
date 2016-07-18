@@ -8,7 +8,7 @@ require_once('Mail.php');
 // Get the contents of the mail here.
 $mail_data = file_get_contents('php://input');
 
-echo syslog(LOG_INFO, $mail_data);
+syslog(LOG_INFO, $mail_data);
 
 $mail = new Mail($mail_data);
 
@@ -17,13 +17,17 @@ $sender = $mail->extract_sender();
 
 $contents = $mail->extract_contents();
 
-echo syslog(LOG_INFO, sprintf("sending sms to '%s', contents: '%s'",
+syslog(LOG_INFO, sprintf("sending sms to '%s', contents: '%s'",
                           $to, $contents));
 
-if(sender == "m.hariri@gmail.com")
+if($sender == "m.hariri@gmail.com")
   $from = "46738966872";
-elseif (sender == "feraswilson2010@gmail.com")
+elseif ($sender == "feraswilson2010@gmail.com")
   $from = "46708305578";
+else {
+  syslog(LOG_INFO, "invalid sender: " . $sender);
+  exit();
+}
 
 
 $message = new \Esendex\Model\DispatchMessage(
