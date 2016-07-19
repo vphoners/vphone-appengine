@@ -35,6 +35,9 @@ class mail_utils extends PHPUnit_Framework_TestCase {
     $mail = new Mail(file_get_contents(dirname(__FILE__) . '/mail3.txt'));
     $this->assertEquals("really?", $mail->extract_contents());
 
+    $mail = new Mail(file_get_contents(dirname(__FILE__) . '/mail4.txt'));
+    $this->assertEquals("Yes, it is working.", $mail->extract_contents());
+
   }
 
 

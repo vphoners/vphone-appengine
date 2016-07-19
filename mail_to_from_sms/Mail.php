@@ -34,19 +34,12 @@ class Mail {
   }
 
   function remove_reply_part($contents) {
-    $contents = explode("\n", $contents);
-
-    $pos = count($contents);
-    while($pos-->0) {
-      if(strlen($contents[$pos]) && substr($contents[$pos], 0, 1) != ">")
-        break;
+    $re =  "/^(.*)On[^\\,]+,[^\\,]+,[^\\,]+(,[^\\,]+)?wrote:/Ums";
+    preg_match($re, $contents, $matches);
+    if($matches) {
+      $contents = $matches[1];
     }
-    if($pos < count($contents) - 1) {
-      // if we saw reply section, the last line should also get dropped
-      $pos --;
-    }
-    $contents = array_slice($contents, 0, $pos);
-    return trim(implode("\n", $contents));
+    return trim($contents);
   }
 
   function extract_contents() {
