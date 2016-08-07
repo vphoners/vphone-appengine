@@ -194,7 +194,7 @@ class WP_Http {
 			'body' => null,
 			'compress' => false,
 			'decompress' => true,
-			'sslverify' => true,
+			'sslverify' => false,
 			'sslcertificates' => ABSPATH . WPINC . '/certificates/ca-bundle.crt',
 			'stream' => false,
 			'filename' => null,

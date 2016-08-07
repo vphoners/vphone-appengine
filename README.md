@@ -10,7 +10,7 @@ First time running on this machine? then you need to setup database:
 
 # create the database (if does not exist already)
 
-    mysql -h 127.0.0.1 -uroot -p
+    docker exec -it wordpress_mysql mysql -p
     > create database wordpress_db;
 
 # Open http://localhost:8080/wp-admin/install.php
