@@ -57,8 +57,15 @@ handlers:
   script: mail_to_from_sms/handle_incoming_sms.php
 
 
+- url: /\.well-known/(.*)
+  static_files: letsencrypt/.well-known/\1
+  upload: letsencrypt/\.well-known/.*
+  application_readable: true
+  
+
 - url: /(.+)?/?
   script: wordpress/index.php
+
 
 skip_files:
 - ^(.*/)?\.zip$

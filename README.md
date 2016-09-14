@@ -34,3 +34,25 @@ To upload:
 
 Run `run_tests.sh`
 If using docker image: `docker exec -it xyz /app/run_tests.sh`
+
+# update certificates
+
+Just run :
+
+    letsencrypt-auto renew
+
+And copy-paste certificates by:
+
+    sudo cat /etc/letsencrypt/archive/vphone.io/fullchain2.pem
+    sudo openssl rsa -in /etc/letsencrypt/archive/vphone.io/privkey2.pem
+
+
+## Just for the first time certificate creation
+
+Run in letsencrypt:
+
+    ./letsencrypt-auto certonly --manual
+
+Set domains to vphone.io,www.vphone.io
+
+Set the well-known token as the instructions say
