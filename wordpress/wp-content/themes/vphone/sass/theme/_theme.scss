@@ -335,7 +335,7 @@ fieldset[disabled] .btn-default.active {
 }
 .btn {
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
-  border: none;
+//  border: none;
   border-radius: 300px;
   font-weight: 700;
   text-transform: uppercase;
@@ -360,4 +360,20 @@ img::selection {
 img::-moz-selection {
   color: white;
   background: transparent;
+}
+
+header time.updated {
+  display: none;
+}
+
+.post-navigation {
+  display: none;
+}
+
+.comments-area {
+  margin-top: 40px;
+}
+
+.comment-reply-title {
+  font-size: 1.2rem;
 }
