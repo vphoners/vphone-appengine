@@ -56,3 +56,14 @@ function remove_footer_admin ()
     echo '<span id="footer-thankyou"></span>';
 }
 add_filter('admin_footer_text', 'remove_footer_admin');
+
+function change_register_page_msg($message)
+{
+	if(strpos($message,"Register For This Site") == true)
+	{
+		$message = '<p class="message">Sign up for vphone</p>';
+	}
+
+	return $message;
+}
+add_filter('login_message','change_register_page_msg');
