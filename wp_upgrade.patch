@@ -1,0 +1,13 @@
+diff --git a/wordpress/wp-includes/Requests/Transport/cURL.php b/wordpress/wp-includes/Requests/Transport/cURL.php
+index 7979b2e..6940a6b 100644
+--- a/wordpress/wp-includes/Requests/Transport/cURL.php
++++ b/wordpress/wp-includes/Requests/Transport/cURL.php
+@@ -151,7 +151,7 @@ class Requests_Transport_cURL implements Requests_Transport {
+ 				curl_setopt($this->handle, CURLOPT_SSL_VERIFYPEER, 0);
+ 			}
+ 			elseif (is_string($options['verify'])) {
+-				curl_setopt($this->handle, CURLOPT_CAINFO, $options['verify']);
++//				curl_setopt($this->handle, CURLOPT_CAINFO, $options['verify']);
+ 			}
+ 		}
+ 

@@ -59,3 +59,10 @@ Run in letsencrypt:
 Set domains to vphone.io,www.vphone.io
 
 Set the well-known token as the instructions say
+
+# To upgrade wordpress
+
+Download latest, and copy the files manually
+Then apply this patch:
+
+     patch -p 1 < wp_upgrade.patch
