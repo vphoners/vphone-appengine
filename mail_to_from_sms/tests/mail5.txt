@@ -1,0 +1,55 @@
+X-Received: by 10.46.9.193 with SMTP id 184mr1674007ljj.0.1475957474366;
+        Sat, 08 Oct 2016 13:11:14 -0700 (PDT)
+Return-Path: <richard@familjenklar.se>
+Received: from mail2.protonmail.ch (mail2.protonmail.ch. [185.70.40.22])
+        by gmr-mx.google.com with ESMTPS id w16si349085wmd.0.2016.10.08.13.11.14
+        for <+46735051400@vphone-1339.appspotmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Sat, 08 Oct 2016 13:11:14 -0700 (PDT)
+Received-SPF: pass (google.com: domain of richard@familjenklar.se designates 185.70.40.22 as permitted sender) client-ip=185.70.40.22;
+Authentication-Results: gmr-mx.google.com;
+       spf=pass (google.com: domain of richard@familjenklar.se designates 185.70.40.22 as permitted sender) smtp.mailfrom=richard@familjenklar.se
+Received: from api.protonmail.ch (localhost [127.0.0.1])
+	by mail2.protonmail.ch (Postfix) with ESMTP id C0CF3C4244
+	for <+46735051400@vphone-1339.appspotmail.com>; Sat,  8 Oct 2016 16:11:12 -0400 (EDT)
+Authentication-Results: mail2.protonmail.ch; dkim=none
+Date: Sat, 08 Oct 2016 16:11:12 -0400
+To: +46735051400@vphone-1339.appspotmail.com
+From: Richard Klar <richard@familjenklar.se>
+Reply-To: Richard Klar <richard@familjenklar.se>
+Subject: Re: sms
+Message-ID: <Kt_cJP-O_Ey6cSVaQm7qY6SLd8LzF8KcxDLK7xyj-PgiSwf-p_Vwds96chPga6vOKjYetePVeLScptY4J9c6NDlA8pTMnZc4fjOIYn07KuA=@familjenklar.se>
+In-Reply-To: <94eb2c1a1a6449e2a1053e601e68@google.com>
+References: <94eb2c1a1a6449e2a1053e601e68@google.com>
+Feedback-ID: Rww_19KZudryegWuCnukTpm51biXrwFtEYqqTrgFSE_I9f0yVcuWZq217dCgfsrzY7BXATgWfymHEwsg9hBX9Q==:Ext:ProtonMail
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+	boundary="b1_3e7095b2b53c5810456a8eb89d44021a"
+X-Spam-Status: No, score=-2.9 required=4.0 tests=ALL_TRUSTED,BAYES_00,
+	HTML_MESSAGE,MIME_BASE64_BLANKS autolearn=ham version=3.3.1
+X-Spam-Checker-Version: SpamAssassin 3.3.1 (2010-03-16) on mail2.protonmail.ch
+
+This is a multi-part message in MIME format.
+
+--b1_3e7095b2b53c5810456a8eb89d44021a
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: base64
+
+TnUgZnVuZ2VyYWRlIGRldCEKCgpTZW50IGZyb20gUHJvdG9uTWFpbCBtb2JpbGUKCgoKLS0tLS0t
+LS0gT3JpZ2luYWwgTWVzc2FnZSAtLS0tLS0tLQpPbiA4IG9rdC4gMjAxNiAyMjoxMCwgd3JvdGU6
+CgpMamdnag==
+
+
+--b1_3e7095b2b53c5810456a8eb89d44021a
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: base64
+
+TnUgZnVuZ2VyYWRlIGRldCE8YnIgLz48YnIgLz48YnIgLz5TZW50IGZyb20gUHJvdG9uTWFpbCBt
+b2JpbGU8YnIgLz48YnIgLz48YnIgLz48YnI+LS0tLS0tLS0gT3JpZ2luYWwgTWVzc2FnZSAtLS0t
+LS0tLTxicj5PbiA4IG9rdC4gMjAxNiAyMjoxMCwgd3JvdGU6PGJsb2NrcXVvdGUgY2xhc3M9InBy
+b3Rvbm1haWxfcXVvdGUiPjxicj48aHRtbD4KIDxoZWFkPjwvaGVhZD4KIDxib2R5PgogIExqZ2dq
+CiAgPGJyPiAKIDwvYm9keT4KPC9odG1sPjwvZGl2Pg==
+
+
+
+--b1_3e7095b2b53c5810456a8eb89d44021a--
