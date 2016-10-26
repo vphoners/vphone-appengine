@@ -33,14 +33,26 @@ class Mail {
     return $this->remove_reply_part($contents);
   }
 
-  function remove_reply_part($contents) {
-    $re =  "/^(.*)On[^\\,]+,[^\\,]+,[^\\,]+(,[^\\,]+)?wrote:/Ums";
-    preg_match($re, $contents, $matches);
-    if($matches) {
-      $contents = $matches[1];
+  function match_mail_client_signatures($contents) {
+    $signatures =  array(
+                  "/^(.*)On[^\\,]+,[^\\,]+,[^\\,]+(,[^\\,]+)?wrote:/Ums",
+                  "/^(.*)Sent from ProtonMail mobile.*/Ums");
+    foreach($signatures as $re) {
+      preg_match($re, $contents, $matches);
+      if($matches) {
+        return $matches[1];
+      }
     }
+    return $contents;
+
+  }
+
+  function remove_reply_part($contents) {
+
+    $contents = $this->match_mail_client_signatures($contents);
     return trim($contents);
   }
+
 
   function extract_contents() {
     if(isset($this->struct[1])) {

@@ -26,6 +26,8 @@ elseif ($sender == "feraswilson2010@gmail.com")
   $from = "46708305578";
 elseif ($sender == "richard@familjenklar.se")
   $from = "46723108578";
+elseif ($sender == "mattias@tyve.se")
+  $from = "46731701000";
 else {
   syslog(LOG_INFO, "invalid sender: " . $sender);
   exit();
