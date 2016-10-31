@@ -73,7 +73,7 @@ aside {
 
 // Navigation
 
-.navbar-default {
+#mainNav.navbar-default {
     background-color: white;
     border-color: fade(@gray-darker, 5%);
     .sans-serif-font;
@@ -109,7 +109,7 @@ aside {
             &.active {
                 > a,
                 > a:focus {
-                    color: @theme-primary !important;
+                    color: @theme-primary;
                     background-color: transparent;
                     &:hover {
                         background-color: transparent;
@@ -165,7 +165,7 @@ header {
     min-height: auto;
     .background-cover;
     background-position: center;
-    background-image: url('../img/header.jpg');
+    background-image: url('../images/header.jpg');
     text-align: center;
     color: white;
     .header-content {

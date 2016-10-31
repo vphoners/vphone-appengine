@@ -11,7 +11,10 @@
 
 ?>
 
-	</div><!-- #content -->
+</div><!-- #content -->
+
+<?php if(!is_page_template('page-templates/fronpage.php')) { ?>
+
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
@@ -19,6 +22,7 @@
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
+<?php } ?>
 
 <?php wp_footer(); ?>
 

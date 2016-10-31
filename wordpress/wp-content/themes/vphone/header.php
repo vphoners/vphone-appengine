@@ -19,13 +19,22 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <link rel="shortcut icon"
       type="image/png"
-      href="wp-content/themes/vphone/images/logo.png">
+      href="/wp-content/themes/vphone/images/logo.png">
 
+<!-- Custom Fonts -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic" rel="stylesheet" type="text/css">
+
 
 <?php wp_head(); ?>
 <?php echo get_theme_mod( 'understrap_theme_script_code_setting' ); ?>
 </head>
+
+
+
+<!-- frontpage's customizations don't need the fluff below -->
+<?php if(is_page_template('page-templates/fronpage.php')) return; ?>
 
 <body <?php body_class(); ?>>
 
