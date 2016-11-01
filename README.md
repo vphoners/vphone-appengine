@@ -66,3 +66,8 @@ Download latest, and copy the files manually
 Then apply this patch:
 
      patch -p 1 < wp_upgrade.patch
+
+
+# To check activations
+
+     curl -v -XPOST -d '{"phone_number":"467258573121", "email":"m.hariri@gmailcom"}' -H "Content-Type: application/json" "http://localhost:8080/api/activations/"
