@@ -1,2 +1,3 @@
 secrets.inc.php
 phpunit*.phar
+wordpress/wp-content/themes/vphone/page-templates/frontpage/vendor
