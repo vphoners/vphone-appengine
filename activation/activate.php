@@ -11,7 +11,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $data = json_decode(file_get_contents('php://input'), true);
 
   if(isset($data["phone_number"]) && isset($data["email"])) {
-    $ch = curl_init("https://api.twilio.com/2010-04-01/Accounts/ACaa1ab21d52bfe7db483476c/OutgoingCallerIds.json");
+    mail("mohsen@vphone.io" , "activation" , $data["email"] . " " . $data["phone_number"]);
+    $ch = curl_init("https://api.twilio.com/2010-04-01/Accounts/ACaa1ab21d52bfe7db4834/OutgoingCallerIds.json");
     curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query(array(
       "FriendlyName" => $data["email"] . ":" . genrand(),
       "PhoneNumber" => $data["phone_number"])));
