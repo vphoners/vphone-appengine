@@ -129,10 +129,11 @@ get_header(); ?>
         </div>
     </section>
 
-    <!-- Plugin JavaScript -->
+    <script src="/wp-content/themes/vphone/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
     <script src="/wp-content/themes/vphone/js/scrollreveal.min.js"></script>
     <script src="/wp-content/themes/vphone/js/jquery.magnific-popup.min.js"></script>
+    <script src="/wp-content/themes/vphone/js/frontpage.min.js"></script>
 
 
 
