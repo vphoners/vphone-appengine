@@ -30,10 +30,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         return;
       }
       header("HTTP/1.1 500 error");
+      header('Content-Type: application/json');
       echo $result;
       return;
     }
     curl_close ($ch);
+    header('Content-Type: application/json');
     echo json_encode(array("device" => $res["friendly_name"], "validation_code" => $res["validation_code"]));
 
   }else {
