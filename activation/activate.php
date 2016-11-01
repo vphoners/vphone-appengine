@@ -1,5 +1,7 @@
 <?php
 
+include("creds.php");
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   if($_SERVER["CONTENT_TYPE"] != "application/json") {
     header("HTTP/1.1 415 Only application/json content type is accepted");
@@ -15,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       "PhoneNumber" => $data["phone_number"])));
     curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($ch, CURLOPT_HTTPHEADER, array("Authorization : Basic ".base64_encode("ACaa1ab21d52bfe7db483476c:136744467d43ef890d7")));
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array("Authorization : Basic ".base64_encode($CREDS)));
     $result = curl_exec($ch);
     $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     $res = json_decode($result, true);
@@ -44,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 } elseif ($_SERVER['REQUEST_METHOD'] === 'GET') {
   $ch = curl_init("https://api.twilio.com/2010-04-01/Accounts/ACaa1ab21d52bfe7db48347/OutgoingCallerIds.json?FriendlyName=" . urlencode($_GET["device"]));
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-  curl_setopt($ch, CURLOPT_HTTPHEADER, array("Authorization : Basic ".base64_encode("ACaa1ab21d52bfe7db483476cb73e542ee:136744467d43ef890d7e77d092366d0e")));
+  curl_setopt($ch, CURLOPT_HTTPHEADER, array("Authorization : Basic ".base64_encode($CREDS)));
   $result = curl_exec($ch);
   curl_close ($ch);
   syslog(LOG_INFO, $result);

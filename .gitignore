@@ -2,3 +2,4 @@ secrets.inc.php
 phpunit*.phar
 wordpress/wp-content/themes/vphone/page-templates/frontpage/vendor
 wordpress/wp-content/themes/vphone/page-templates/frontpage/css
+activation/creds.php
