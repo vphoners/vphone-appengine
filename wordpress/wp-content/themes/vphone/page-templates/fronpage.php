@@ -106,7 +106,7 @@ get_header(); ?>
         <div class="container text-center">
             <div class="call-to-action">
                 <h2><?php echo $contents['download-headline'] ?></h2>
-                <a href="https://play.google.com/store/apps/details?id=io.vphone.vphonedispatcher">
+                <a href="/download-app">
                     <img src="/wp-content/themes/vphone/images/android_download.png" width="200"/>
                 </a>
             </div>
