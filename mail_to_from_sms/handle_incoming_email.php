@@ -3,6 +3,7 @@
 require_once('esendex-php-sdk/src/autoload.php');
 require_once('../secrets.inc.php');
 require_once('Mail.php');
+require_once('users.php');
 
 
 // Get the contents of the mail here.
@@ -20,15 +21,9 @@ $contents = $mail->extract_contents();
 syslog(LOG_INFO, sprintf("sending sms to '%s', contents: '%s'",
                           $to, $contents));
 
-if($sender == "m.hariri@gmail.com")
-  $from = "46738966872";
-elseif ($sender == "feraswilson2010@gmail.com")
-  $from = "46708305578";
-elseif ($sender == "richard@familjenklar.se")
-  $from = "46723108578";
-elseif ($sender == "mattias@tyve.se")
-  $from = "46731701000";
-else {
+if(isset($USERS[$sender])) {
+  $from = $USERS[$sender];
+} else {
   syslog(LOG_INFO, "invalid sender: " . $sender);
   exit();
 }

@@ -5,16 +5,14 @@ if($_SERVER["CONTENT_TYPE"] != "application/json") {
   return;
 }
 
+require_once('users.php');
+
 $data = json_decode(file_get_contents('php://input'), true);
 
-if($data["device"] == "mohsen") {
-  $to = "m.hariri@gmail.com";
-}elseif($data["device"] == "z9KAYVYxOUkw") {
-  $to = "richard@familjenklar.se";
-}elseif($data["device"] == "S1sbzkOObdzf") {
-  $to = "mattias@tyve.se";
+if(isset($DEVICES[$data["device"]])) {
+  $to = $DEVICES[$data["device"]];
 }else{
-  $to = "feraswilson2010@gmail.com";
+  $to = "mohsen+dead+sms@vphone.io";
 }
 
 if(isset($data["from"]) && isset($data["timestamp"]) && isset($data["body"])) {

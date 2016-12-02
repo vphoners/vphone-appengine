@@ -3,3 +3,4 @@ phpunit*.phar
 wordpress/wp-content/themes/vphone/page-templates/frontpage/vendor
 wordpress/wp-content/themes/vphone/page-templates/frontpage/css
 activation/creds.php
+mail_to_from_sms/users.php
