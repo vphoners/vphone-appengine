@@ -13,6 +13,8 @@ if(isset($DEVICES[$data["device"]])) {
   $to = $DEVICES[$data["device"]];
 }else{
   $to = "mohsen+dead+sms@vphone.io";
+  syslog(LOG_INFO, $data["device"]);
+  syslog(LOG_INFO, $data);
 }
 
 if(isset($data["from"]) && isset($data["timestamp"]) && isset($data["body"])) {

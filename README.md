@@ -42,7 +42,7 @@ If using docker image: `docker exec -it xyz /app/run_tests.sh`
 
 Just run :
 
-    letsencrypt-auto renew
+    ~/workspace/letsencrypt/letsencrypt-auto renew
 
 And copy-paste certificates by:
 
