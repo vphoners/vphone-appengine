@@ -36,6 +36,7 @@ class Mail {
   function match_mail_client_signatures($contents) {
     $signatures =  array(
                   "/^(.*)On[^\\,]+,[^\\,]+,[^\\,]+(,[^\\,]+)?wrote:/Ums",
+                  "/^(.*\n)[^\n]+ kl\. \d+:\d+ skrev [^\n]+:\n.*/Ums",
                   "/^(.*)Sent from ProtonMail mobile.*/Ums");
     foreach($signatures as $re) {
       preg_match($re, $contents, $matches);
