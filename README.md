@@ -29,7 +29,9 @@ Login with admin/admin
 
 To upload:
 
-    ~/google_appengine/appcfg.py update .
+    for once:
+        gcloud config set project vphone-1339 
+    gcloud app deploy
 
 
 
